@@ -1,0 +1,282 @@
+1.Populate all the five tables with your own data.
+mysql> use faculty;
+Database changed
+mysql> insert into faculty values(142, "Anu", "F",'2005-03-21','2020-10-25','123456789',"AI");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into faculty values(132, "ram", "M",'1970-04-14','1999-05-10','1234567890',"02");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into faculty values(143, "sunny", "F",'1995-02-02','1998-11-17','123456789',"03");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into faculty values(154, "mahe" ,"M",'1990-05-02','2016-11-17','123456789',"04");
+Query OK, 1 row affected (0.01 sec)
+
+msql> insert into faculty values(174, "divi", "F",'1990-01-01','2015-09-08','123456789',"05Query OK, 1 row affected (0.01 sec)
+
+mysql> select* from faculty;
++-------+---------+--------+------------+------------+------------+--------+
+| facno | Facname | gender | dob        | doj        | mobileno   | DeptNo |
++-------+---------+--------+------------+------------+------------+--------+
+| 132   | ram     | M      | 1970-04-14 | 1999-05-10 | 1234567890 | 02     |
+| 142   | Anu     | F      | 2005-03-21 | 2020-10-25 |  123456789 | AI     |
+| 143   | sunny   | F      | 1995-02-02 | 1998-11-17 |  123456789 | 03     |
+| 154   | mahe    | M      | 1990-05-02 | 2016-11-17 |  123456789 | 04     |
+| 174   | divi    | F      | 1990-01-01 | 2015-09-08 |  123456789 | 05     |
++-------+---------+--------+------------+------------+------------+--------+
+5 rows in set (0.00 sec)
+
+mysql> use department;
+Database changed
+mysql> insert into department values('01','cse','vs');
+Query OK, 1 row affected (0.01 sec)
+mysql> insert into department values('02','civil','ms');
+Query OK, 1 row affected (0.01 sec)
+mysql> insert into department values('03','mechanical','ga');
+Query OK, 1 row affected (0.00 sec)
+mysql> insert into department values('04','ece','hr');
+Query OK, 1 row affected (0.00 sec)
+mysql> insert into department values('05','medical','kv');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from department;
++--------+------------+----------+
+| deptno | deptname   | depthead |
++--------+------------+----------+
+| 01     | cse        | vs       |
+| 02     | civil      | ms       |
+| 03     | mechanical | ga       |
+| 04     | ece        | hr       |
+| 05     | medical    | kv       |
++--------+------------+----------+
+5 rows in set (0.00 sec)
+
+mysql> use course;
+Database changed
+mysql> insert into course values('C01','dbms','M','1','502','3001');
+Query OK, 1 row affected (0.07 sec)
+mysql> insert into course values('C02','ethics','E','2','112','3002');
+Query OK, 1 row affected (0.07 sec)
+mysql> insert into course values('C03','mathematics','M','2','412','3003');
+Query OK, 1 row affected (0.06 sec)
+mysql> insert into course values('C04','english','S','3','321','3004');
+Query OK, 1 row affected (0.07 sec)
+mysql> insert into course values('C05','sql','D','4','112','3005');
+Query OK, 1 row affected (0.07 sec)
+mysql> select * from course;
++----------+-------------+------------+-------+--------+-------+
+| courseno | coursedesc  | coursetype | semno | hallno | facno |
++----------+-------------+------------+-------+--------+-------+
+| C01      | dbms        | M          | 1     | 502    | 3001  |
+| C02      | ethics      | E          | 2     | 112    | 3002  |
+| C03      | mathematics | M          | 2     | 412    | 3003  |
+| C04      | english     | S          | 3     | 321    | 3004  |
+| C05      | sql         | D          | 4     | 112    | 3005  |
++----------+-------------+------------+-------+--------+-------+
+5 rows in set (0.00 sec)
+
+mysql> use student;
+Database changed
+mysql> insert into student values('192224110','sunny','f','2005-11-10','1234567890','kadapa');
+Query OK, 1 row affected (0.07 sec)
+mysql> insert into student values('192224103','ramya','f','2005-09-08','3456789012','piler');
+Query OK, 1 row affected (0.07 sec)
+mysql> insert into student values('192211755','siva','m','2005-12-10','4567890123','rajampeta');
+Query OK, 1 row affected (0.07 sec)
+mysql> insert into student values('192224102','koya','f','2005-12-01','5678901234','hyderabad');
+Query OK, 1 row affected (0.07 sec)
+mysql> insert into student values('192224104','sai','m','2004-03-02','6789012345','guntur');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select*from student;
++-----------+----------+--------+------------+------------+-----------+
+| regno     | name     | gender | dob        | Mobileno   | city      |
++-----------+----------+--------+------------+------------+-----------+
+| 191711342 | LASYA    | F      | 2005-11-15 | 1234567890 | KOVURU    |
+| 192211068 | JASWANTH | M      | 2004-12-14 | 1234567980 | PUTTUR    |
+| 192211755 | siva     | m      | 2005-12-10 | 4567890123 | rajampeta |
+| 192224102 | koya     | f      | 2005-12-01 | 5678901234 | hyderabad |
+| 192224103 | ramya    | f      | 2005-09-08 | 3456789012 | piler     |
+| 192224104 | sai      | m      | 2004-03-02 | 6789012345 | guntur    |
+| 192224110 | sunny    | f      | 2005-11-10 | 1234567890 | kadapa    |
+| 192224113 | LASYA    | F      | 2005-11-15 | 1234567890 | KOVURU    |
++-----------+----------+--------+------------+------------+-----------+
+8rows in set (0.00 sec)1
+2.Update the value of student name whose register number is ‘191711342’
+mysql> update student set name="LASYA" where regno="191711342";
+Query OK, 0 rows affected (0.01 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+mysql> select*from student;
++-----------+----------+--------+------------+------------+-----------+
+| regno     | name     | gender | dob        | Mobileno   | city      |
++-----------+----------+--------+------------+------------+-----------+
+| 191711342 | LASYA    | F      | 2005-11-15 | 1234567890 | KOVURU    |
+| 192211068 | JASWANTH | M      | 2004-12-14 | 1234567980 | PUTTUR    |
+| 192211755 | siva     | m      | 2005-12-10 | 4567890123 | rajampeta |
+| 192224102 | koya     | f      | 2005-12-01 | 5678901234 | hyderabad |
+| 192224103 | ramya    | f      | 2005-09-08 | 3456789012 | piler     |
+| 192224104 | sai      | m      | 2004-03-02 | 6789012345 | guntur    |
+| 192224110 | sunny    | f      | 2005-11-10 | 1234567890 | kadapa    |
+| 192224113 | LASYA    | F      | 2005-11-15 | 1234567890 | KOVURU    |
++-----------+----------+--------+------------+------------+-----------+
+8 rows in set (0.00 sec)
+3.Delete the record in the table FACULTY, who resigned her job.
+mysql> delete from student where regno="192224113";
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from student;
++-----------+----------+--------+------------+------------+-----------+
+| regno     | name     | gender | dob        | Mobileno   | city      |
++-----------+----------+--------+------------+------------+-----------+
+| 191711342 | LASYA    | F      | 2005-11-15 | 1234567890 | KOVURU    |
+| 192211068 | JASWANTH | M      | 2004-12-14 | 1234567980 | PUTTUR    |
+| 192211755 | siva     | m      | 2005-12-10 | 4567890123 | rajampeta |
+| 192224102 | koya     | f      | 2005-12-01 | 5678901234 | hyderabad |
+| 192224103 | ramya    | f      | 2005-09-08 | 3456789012 | piler     |
+| 192224104 | sai      | m      | 2004-03-02 | 6789012345 | guntur    |
+| 192224110 | sunny    | f      | 2005-11-10 | 1234567890 | kadapa    |
++-----------+----------+--------+------------+------------+-----------+
+7 rows in set (0.00 sec)
+
+mysql> use faculty;
+Database changed
+mysql> delete from faculty where deptno="AI";
+Query OK, 1 row affected (0.07 sec)
+mysql> select*from faculty;
++-------+---------+--------+------------+------------+------------+--------+
+| facno | Facname | gender | dob        | doj        | mobileno   | DeptNo |
++-------+---------+--------+------------+------------+------------+--------+
+| 132   | ram     | M      | 1970-04-14 | 1999-05-10 | 1234567890 | 02     |
+| 143   | sunny   | F      | 1995-02-02 | 1998-11-17 |  123456789 | 03     |
+| 154   | mahe    | M      | 1990-05-02 | 2016-11-17 |  123456789 | 04     |
+| 174   | divi    | F      | 1990-01-01 | 2015-09-08 |  123456789 | 05     |
++-------+---------+--------+------------+------------+------------+--------+
+4rows in set (0.00 sec)
+4.Modify the date of birth for the faculty whose name is 'RAM' with a value ‘1983-05-01’.
+mysql> update faculty set DOB="1983-05-01" where facname="ram";
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select*from faculty;
++-------+---------+--------+------------+------------+------------+--------+
+| facno | Facname | gender | dob        | doj        | mobileno   | DeptNo |
++-------+---------+--------+------------+------------+------------+--------+
+| 132   | ram     | M      | 1983-05-01 | 1999-05-10 | 1234567890 | 02     |
+| 143   | sunny   | F      | 1995-02-02 | 1998-11-17 |  123456789 | 03     |
+| 154   | mahe    | M      | 1990-05-02 | 2016-11-17 |  123456789 | 04     |
+| 174   | divi    | F      | 1990-01-01 | 2015-09-08 |  123456789 | 05     |
++-------+---------+--------+------------+------------+------------+--------+
+4 rows in set (0.00 sec)
+mysql> alter table faculty
+    -> add age int(3);
+Query OK, 0 rows affected, 1 warning (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+mysql> select*from faculty;
++-------+---------+--------+------------+------------+------------+--------+------+
+| facno | Facname | gender | dob        | doj        | mobileno   | DeptNo | age  |
++-------+---------+--------+------------+------------+------------+--------+------+
+| 132   | ram     | M      | 1983-05-01 | 1999-05-10 | 1234567890 | 02     | NULL |
+| 143   | sunny   | F      | 1995-02-02 | 1998-11-17 |  123456789 | 03     | NULL |
+| 154   | mahe    | M      | 1990-05-02 | 2016-11-17 |  123456789 | 04     | NULL |
+| 174   | divi    | F      | 1990-01-01 | 2015-09-08 |  123456789 | 05     | NULL |
++-------+---------+--------+------------+------------+------------+--------+------+
+4 rows in set (0.00 sec)
+mysql> update faculty set age="39" where facname="mahe";
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+mysql> update faculty set DOB="1955-02-03" where facname="sunny";
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update faculty set age="65" where facname="sunny";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+mysql> update faculty set age="65" where facname="ram";
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+mysql> update faculty set age="49" where facname="divi";
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select*from faculty;
++-------+---------+--------+------------+------------+------------+--------+------+
+| facno | Facname | gender | dob        | doj        | mobileno   | DeptNo | age  |
++-------+---------+--------+------------+------------+------------+--------+------+
+| 132   | ram     | M      | 1983-05-01 | 1999-05-10 | 1234567890 | 02     |   65 |
+| 143   | sunny   | F      | 1955-02-03 | 1998-11-17 |  123456789 | 03     |   65 |
+| 154   | mahe    | M      | 1990-05-02 | 2016-11-17 |  123456789 | 04     |   39 |
+| 174   | divi    | F      | 1990-01-01 | 2015-09-08 |  123456789 | 05     |   49 |
++-------+---------+--------+------------+------------+------------+--------+------+
+4rows in set (0.00 sec)
+5.Remove all faculty who are having over 65 years
+mysql> delete from faculty where age>65;
+Query OK, 0 rows affected (0.00 sec)
+mysql> select*from faculty;
++-------+---------+--------+------------+------------+------------+--------+------+
+| facno | Facname | gender | dob        | doj        | mobileno   | DeptNo | age  |
++-------+---------+--------+------------+------------+------------+--------+------+
+| 132   | ram     | M      | 1983-05-01 | 1999-05-10 | 1234567890 | 02     |   65 |
+| 143   | sunny   | F      | 1955-02-03 | 1998-11-17 |  123456789 | 03     |   65 |
+| 154   | mahe    | M      | 1990-05-02 | 2016-11-17 |  123456789 | 04     |   39 |
+| 174   | divi    | F      | 1990-01-01 | 2015-09-08 |  123456789 | 05     |   49 |
++-------+---------+--------+------------+------------+------------+--------+------+
+4rows in set (0.00 sec)
+6.View all the records from the five tables.
+mysql> select*from student;
+ERROR 1146 (42S02): Table 'faculty.student' doesn't exist
+mysql> use student;
+Database changed
+mysql> select*from student;
++-----------+----------+--------+------------+------------+-----------+
+| regno     | name     | gender | dob        | Mobileno   | city      |
++-----------+----------+--------+------------+------------+-----------+
+| 191711342 | LASYA    | F      | 2005-11-15 | 1234567890 | KOVURU    |
+| 192211068 | JASWANTH | M      | 2004-12-14 | 1234567980 | PUTTUR    |
+| 192211755 | siva     | m      | 2005-12-10 | 4567890123 | rajampeta |
+| 192224102 | koya     | f      | 2005-12-01 | 5678901234 | hyderabad |
+| 192224103 | ramya    | f      | 2005-09-08 | 3456789012 | piler     |
+| 192224104 | sai      | m      | 2004-03-02 | 6789012345 | guntur    |
+| 192224110 | sunny    | f      | 2005-11-10 | 1234567890 | kadapa    |
++-----------+----------+--------+------------+------------+-----------+
+7 rows in set (0.00 sec)
+
+mysql> use faculty;
+Database changed
+mysql> select *from faculty;
++-------+---------+--------+------------+------------+------------+--------+------+
+| facno | Facname | gender | dob        | doj        | mobileno   | DeptNo | age  |
++-------+---------+--------+------------+------------+------------+--------+------+
+| 132   | ram     | M      | 1983-05-01 | 1999-05-10 | 1234567890 | 02     |   65 |
+| 143   | sunny   | F      | 1955-02-03 | 1998-11-17 |  123456789 | 03     |   65 |
+| 154   | mahe    | M      | 1990-05-02 | 2016-11-17 |  123456789 | 04     |   39 |
+| 174   | divi    | F      | 1990-01-01 | 2015-09-08 |  123456789 | 05     |   49 |
++-------+---------+--------+------------+------------+------------+--------+------+
+4 rows in set (0.00 sec)
+
+mysql> use department;
+Database changed
+mysql> select * from department;
++--------+------------+----------+
+| deptno | deptname   | depthead |
++--------+------------+----------+
+| 01     | cse        | vs       |
+| 02     | civil      | ms       |
+| 03     | mechanical | ga       |
+| 04     | ece        | hr       |
+| 05     | medical    | kv       |
++--------+------------+----------+
+5 rows in set (0.00 sec)
+mysql> use course;
+Database changed
+mysql> select*from course;
++----------+-------------+------------+-------+--------+-------+
+| courseno | coursedesc  | coursetype | semno | hallno | facno |
++----------+-------------+------------+-------+--------+-------+
+| C01      | dbms        | M          | 1     | 502    | 3001  |
+| C02      | ethics      | E          | 2     | NULL   | 3002  |
+| C03      | mathematics | M          | 2     | 412    | 3003  |
+| C04      | english     | S          | 3     | NULL   | 3004  |
+| C05      | sql         | D          | 4     | NULL   | 3005  |
++----------+-------------+------------+-------+--------+-------+
+5 rows in set (0.00 sec)
