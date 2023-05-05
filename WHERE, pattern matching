@@ -1,0 +1,56 @@
+1.The student counsellor wanted to display the registration number, student name and date of birth for all the students.
+mysql> select regno, name, dob from student;
++-----------+----------+------------+
+| regno     | name     | dob        |
++-----------+----------+------------+
+| 191711342 | LASYA    | 2005-11-15 |
+| 192211068 | JASWANTH | 2004-12-14 |
+| 192211755 | siva     | 2005-12-10 |
+| 192224102 | koya     | 2005-12-01 |
+| 192224103 | ramya    | 2005-09-08 |
+| 192224104 | sai      | 2004-03-02 |
+| 192224110 | sunny    | 2005-11-10 |
++-----------+----------+------------+
+7 rows in set (0.00 sec)
+2.The controller of examinations wanted to list all the female students
+mysql> select*from student where gender="F";
++-----------+-------+--------+------------+------------+-----------+
+| regno     | name  | gender | dob        | Mobileno   | city      |
++-----------+-------+--------+------------+------------+-----------+
+| 191711342 | LASYA | F      | 2005-11-15 | 1234567890 | KOVURU    |
+| 192224102 | koya  | f      | 2005-12-01 | 5678901234 | hyderabad |
+| 192224103 | ramya | f      | 2005-09-08 | 3456789012 | piler     |
+| 192224110 | sunny | f      | 2005-11-10 | 1234567890 | kadapa    |
++-----------+-------+--------+------------+------------+-----------+
+4 rows in set (0.00 sec)
+3.Who are the boy students registered for course with the course number “C001“
+
+mysql> select*from student where courseno='c001';
++-----------+----------+--------+------------+------------+-----------+----------+------------+
+| regno     | name     | gender | dob        | Mobileno   | city      | courseno | coursedesc |
++-----------+----------+--------+------------+------------+-----------+----------+------------+
+| 192211068 | JASWANTH | M      | 2004-12-14 | 1234567980 | PUTTUR    | c001     | mysql      |
+| 192211755 | siva     | m      | 2005-12-10 | 4567890123 | rajampeta | c001     | mysql      |
+| 192224104 | sai      | m      | 2004-03-02 | 6789012345 | guntur    | c001     | mysql      |
++-----------+----------+--------+------------+------------+-----------+----------+------------+
+3 rows in set (0.00 sec)
+4.Display all faculty details joined before “November 2014”
+mysql> use faculty;
+Database changed
+mysql> select*from faculty where doj < "2014-11-01";
++-------+---------+--------+------------+------------+------------+--------+------+------+
+| facno | Facname | gender | dob        | doj        | mobileno   | DeptNo | age  | res  |
++-------+---------+--------+------------+------------+------------+--------+------+------+
+| 132   | ram     | M      | 1983-05-01 | 1999-05-10 | 1234567890 | 02     |   65 | no   |
++-------+---------+--------+------------+------------+------------+--------+------+------+
+1 row in set (0.00 sec)
+5.Display all the courses not allotted to halls
+mysql> select*from course where hallno="NULL";
++----------+------------+------------+-------+--------+-------+
+| courseno | coursedesc | coursetype | semno | hallno | facno |
++----------+------------+------------+-------+--------+-------+
+| C02      | ethics     | E          | 2     | NULL   | 3002  |
+| C04      | english    | S          | 3     | NULL   | 3004  |
+| C05      | sql        | D          | 4     | NULL   | 3005  |
++----------+------------+------------+-------+--------+-------+
+3 rows in set (0.00 sec)
