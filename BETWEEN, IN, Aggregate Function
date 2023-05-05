@@ -1,0 +1,58 @@
+1)Find the average mark of “C002”.
+mysql> select courseno, avg(score) from student where courseno="c002";
++----------+------------+
+| courseno | avg(score) |
++----------+------------+
+| c002     |    77.0000 |
++----------+------------+
+1 row in set (0.00 sec)
+2)List the maximum, minimum mark for “C021”
+mysql> select courseno,max(scores), min(scores) from student where courseno="c021";
+ERROR 1054 (42S22): Unknown column 'scores' in 'field list'
+mysql> select courseno,max(score), min(score) from student where courseno="c021";
++----------+------------+------------+
+| courseno | max(score) | min(score) |
++----------+------------+------------+
+| c021     |         98 |         98 |
++----------+------------+------------+
+1 row in set (0.00 sec)
+3)List the name of the courses and average mark of each courses
+mysql> select coursedesc, avg(score) from student group by coursedesc;
++------------+------------+
+| coursedesc | avg(score) |
++------------+------------+
+| mysql      |    77.8000 |
+| ds         |    64.5000 |
++------------+------------+
+2 rows in set (0.00 sec)
+4)Calculate the sum of all the scores.
+mysql> select sum(score) from student;
++------------+
+| sum(score) |
++------------+
+|        518 |
++------------+
+1 row in set (0.00 sec)
+5)How many students are registered for each course? Display the  course description and the number of students registered in each course.
+mysql> select coursedesc, count(coursedesc) from student group by coursedesc;
++------------+-------------------+
+| coursedesc | count(coursedesc) |
++------------+-------------------+
+| mysql      |                 5 |
+| ds         |                 2 |
++------------+-------------------+
+2 rows in set (0.00 sec)
+6)How many courses did each student register for? Use Assessment table.
+mysql> select name, count(coursedesc) from student group by name;
++----------+-------------------+
+| name     | count(coursedesc) |
++----------+-------------------+
+| LASYA    |                 1 |
+| JASWANTH |                 1 |
+| siva     |                 1 |
+| koya     |                 1 |
+| ramya    |                 1 |
+| sai      |                 1 |
+| sunny    |                 1 |
++----------+-------------------+
+7 rows in set (0.00 sec)
